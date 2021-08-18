@@ -16,7 +16,7 @@ public class ShipmentTypeServiceImpl implements ShipmentTypeService{
 	@Override
 	public ShipmentType createShipmentType(ShipmentType shipmentType) {
 		
-		return shipmentTypeRepository.save(shipmentType);
+		return shipmentTypeRepository.save(shipmentType); 
 	}
 
 }

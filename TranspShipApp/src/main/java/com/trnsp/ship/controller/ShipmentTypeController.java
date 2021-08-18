@@ -1,7 +1,6 @@
 package com.trnsp.ship.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,16 +17,19 @@ public class ShipmentTypeController {
 	@Autowired
 	private ShipmentTypeService shipmentTypeService;
 	
-	@RequestMapping(value="/create",method = RequestMethod.POST)
-	public String create(@ModelAttribute ShipmentType shipmentType, Model model){
-		
-		ShipmentType type = shipmentTypeService.createShipmentType(shipmentType);
-		
-		String msg="saved successfully";
-		
-		Model types=model.addAttribute("type",msg);
-		
+	@RequestMapping(value="/register",method = RequestMethod.GET)
+	public String displayRegisterPage(){
+	
 		return "ShipmentType";
 	}
 
+	@RequestMapping(value="/create",method = RequestMethod.POST)
+	public String createShipment(@ModelAttribute ShipmentType shipmentType,Model model) {
+		ShipmentType id = shipmentTypeService.createShipmentType(shipmentType);
+		String msg="Shipment Type "+shipmentType.getId()+" Saved Successfully !!";
+		model.addAttribute("message", msg);
+		return "ShipmentType";
+	}
+	
+	
 }
