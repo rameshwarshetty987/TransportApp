@@ -1,5 +1,7 @@
 package com.trnsp.ship.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,11 @@ public class ShipmentTypeServiceImpl implements ShipmentTypeService{
 	public ShipmentType createShipmentType(ShipmentType shipmentType) {
 		
 		return shipmentTypeRepository.save(shipmentType); 
+	}
+
+	@Override
+	public List<ShipmentType> getAllShipmentType() {
+		return shipmentTypeRepository.findAll();
 	}
 
 }
