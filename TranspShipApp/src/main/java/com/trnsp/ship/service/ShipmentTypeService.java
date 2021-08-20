@@ -10,6 +10,8 @@ public interface ShipmentTypeService {
 	public ShipmentType createShipmentType(ShipmentType shipmentType);
 	
 	public List<ShipmentType> getAllShipmentType();
+
+	public void deleteShipment(Long id);
 	
 
 }

@@ -1,8 +1,28 @@
-<!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org/">
 <head>
 </head>
 <body>
-<span th=text=${display}></span>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>Shipment Mode</th>
+			<th>Shipment Code</th>
+			<th>Enable Shipment</th>
+			<th>Shipment Grade</th>
+			<th>Description</th>
+			<th>Operation</th>
+		</tr>
+		<tr th:each="obj : ${list}">
+			<td th:text="${obj.id}"></td>
+			<td th:text="${obj.shipmentMode}"></td>
+			<td th:text="${obj.shipmentCode}"></td>
+			<td th:text="${obj.enableShipment}"></td>
+			<td th:text="${obj.shipmentGrade}"></td>
+			<td th:text="${obj.shipmentDescrp}"></td>
+			<td><a th:href="@{/ship/delete/{id}(id=${obj.id})}">Delete</a></td>
+		</tr>
+	</table>
+	<span th:text=${message}></span>
 </body>
 </html>
+
