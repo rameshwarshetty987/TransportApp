@@ -15,19 +15,19 @@ public class ShipmentType {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name="id",length=200,nullable = false)
 	private Long id;
 	
-	@Column(name="ship_mode")
+	@Column(name="ship_mode",nullable = false)
 	private String shipmentMode;
 	
-	@Column(name="ship_code")
+	@Column(name="ship_code",nullable = false)
 	private String shipmentCode;
 	
-	@Column(name="enable_ship")
+	@Column(name="enable_ship",nullable = false)
 	private String enableShipment;
 	
-	@Column(name="ship_grade")
+	@Column(name="ship_grade",nullable = false)
 	private String shipmentGrade;
 	
 	@Column(name="ship_descrp")

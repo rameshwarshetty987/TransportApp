@@ -3,8 +3,9 @@
 </head>
 <body>
 	<h3 align="center">Welcome to ShipmentType Registraion Page</h3>
-	<form th:action="@{/ship/create}" method="Post" th:object="${shipmentType}">
+	<form th:action="@{/ship/update}" method="Post" th:object="${shipmentType}">
 		<pre>
+		Shipment ID :<input  th:field="*{id}" readonly="readonly">
 		Shipment Mode : <select th:field="*{shipmentMode}">
 			<option value=" ">--select--</option>
 			<option value="Ship">Ship</option>
@@ -25,9 +26,8 @@
 		Description :
 		<textarea th:field="*{shipmentDescrp}"></textarea>
 		
-		<input type="submit" value="Create Shipment" />
+		<input type="submit" value="Update Shipment" />
      </pre>
 	</form>
-	<span th:text=${message}></span>
 </body>
 </html>

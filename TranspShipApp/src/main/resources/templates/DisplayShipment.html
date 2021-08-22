@@ -10,7 +10,7 @@
 			<th>Enable Shipment</th>
 			<th>Shipment Grade</th>
 			<th>Description</th>
-			<th>Operation</th>
+			<th rowspan="1">Operation</th>
 		</tr>
 		<tr th:each="obj : ${list}">
 			<td th:text="${obj.id}"></td>
@@ -19,7 +19,9 @@
 			<td th:text="${obj.enableShipment}"></td>
 			<td th:text="${obj.shipmentGrade}"></td>
 			<td th:text="${obj.shipmentDescrp}"></td>
-			<td><a th:href="@{/ship/delete/{id}(id=${obj.id})}">Delete</a></td>
+			<td><a th:href="@{/ship/delete/{id}(id=${obj.id})}">Delete</a> |
+			    <a th:href="@{/ship/edit/{id}(id=${obj.id})}">Edit</a>
+			</td>
 		</tr>
 	</table>
 	<span th:text=${message}></span>
