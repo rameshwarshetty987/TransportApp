@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.trnsp.ship.entity.ShipmentType;
-import com.trnsp.ship.service.ShipmentTypeService;
+import com.trnsp.ship.service.IShipmentTypeService;
 
 @Controller
 @RequestMapping(value = "/ship")
@@ -23,7 +23,7 @@ public class ShipmentTypeController {
 	private static Logger logger = LoggerFactory.getLogger(ShipmentTypeController.class);
 
 	@Autowired
-	private ShipmentTypeService shipmentTypeService;
+	private IShipmentTypeService shipmentTypeService;
 
 	String msg;
 

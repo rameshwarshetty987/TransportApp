@@ -1,0 +1,28 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+</head>
+<body>
+	<table border="1">
+
+		<tr>
+			<th>UOM Id</th>
+			<th>UOM Type</th>
+			<th>UOM Model</th>
+			<th>UOM Description</th>
+			<th>Operation</th>
+		</tr>
+
+		<tr th:each="obj : ${all}">
+			<td th:text="${obj.id}"></td>
+			<td th:text="${obj.uomType}"></td>
+			<td th:text="${obj.uomModel}"></td>
+			<td th:text="${obj.uomDescrip}"></td>
+			<td> 
+			<a th:href="@{/uom/delete/{id}(id=${obj.id})}">Delete</a> |
+			<a th:href="@{/uom/edit/{id}(id=${obj.id})}">Edit</a>
+			</td>
+		</tr>
+	</table>
+	<span th:text="${message}"></span>
+</body>
+</html>

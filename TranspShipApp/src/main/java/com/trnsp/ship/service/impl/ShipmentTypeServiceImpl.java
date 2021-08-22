@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.trnsp.ship.entity.ShipmentType;
 import com.trnsp.ship.repository.ShipmentTypeRepository;
-import com.trnsp.ship.service.ShipmentTypeService;
+import com.trnsp.ship.service.IShipmentTypeService;
 
 @Service
-public class ShipmentTypeServiceImpl implements ShipmentTypeService{
+public class ShipmentTypeServiceImpl implements IShipmentTypeService{
 
 	@Autowired
 	private ShipmentTypeRepository shipmentTypeRepository;

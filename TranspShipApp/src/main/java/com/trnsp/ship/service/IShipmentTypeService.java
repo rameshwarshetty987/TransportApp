@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.trnsp.ship.entity.ShipmentType;
 
-public interface ShipmentTypeService {
+public interface IShipmentTypeService {
 	
 	
 	public ShipmentType createShipmentType(ShipmentType shipmentType);
