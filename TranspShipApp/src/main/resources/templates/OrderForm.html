@@ -1,0 +1,30 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+</head>
+<body>
+	<h3>Welcome to Order Form</h3>
+	<form th:action="@{/order/create}" method="post">
+		<pre>
+ Order Mode :
+ 	<input type="radio" name="orderMode" value="Sale" />Sale 
+ 	<input type="radio" name="orderMode" value="Purchase" />Purchase
+ 	
+ Order Code : <input type="text" name="orderCode" />
+ Order Type : <select name="orderType">
+ <option value="">--select--</option>
+ <option value="FIFO">FIFO</option>
+ <option value="LIFO">LIFO</option>
+ <option value="FCFO">FCFO</option>
+ <option value="FEFO">FEFO</option>
+ </select>
+ Order Accept : 
+ 	<input type="checkbox" name="orderAccept" value="Multi-Model"/>Multi-Model
+ 	<input type="checkbox" name="orderAccept" value="Accept Return" />Accept Return
+ Order Description :<textarea name="orderDescrip"></textarea>
+  
+ <input type="submit" value="Create Order" /> 
+  </pre>
+	</form>
+	<span th:text="${message}"></span>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>Order ID</th>
+			<th>Order Mode</th>
+			<th>Order Code</th>
+			<th>Order Type</th>
+			<th>Order Accept</th>
+			<th>Order Description</th>
+			<th>Operation</th>
+		</tr>
+
+		<tr th:each="obj:${list}">
+			<td th:text="${obj.ordrId}"></td>
+			<td th:text="${obj.orderMode}"></td>
+			<td th:text="${obj.orderCode}"></td>
+			<td th:text="${obj.orderType}"></td>
+			<td th:text="${obj.orderAccept}"></td>
+			<td th:text="${obj.orderDescrip}"></td>
+			<td>
+			<a th:href="@{/order/delete/{id} (id=${obj.ordrId})}">Delete</a> |
+			<a th:href="@{/order/edit/{id} (id=${obj.ordrId})}">Edit</a>
+			</td>
+		</tr>
+	</table>
+	<span th:text="${message}"></span>
+</body>
+</html>
