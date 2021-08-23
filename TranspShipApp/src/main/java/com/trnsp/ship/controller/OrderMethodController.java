@@ -79,4 +79,19 @@ public class OrderMethodController {
 		return "DisplayOrder";
 	}
 	
+	//for seperate view page
+	
+	@RequestMapping(value = "/view/{id}",method = RequestMethod.GET)
+	public String view(@PathVariable Long id, Model model) {
+		
+		OrderMethod one = orderMethodService.getOne(id);
+		
+		model.addAttribute("objOne", one);
+		
+		List<OrderMethod> fetchAll = orderMethodService.fetchAll();
+		 model.addAttribute("list", fetchAll);
+		
+		return "ViewOrder";
+	}
+	
 }

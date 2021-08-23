@@ -22,7 +22,8 @@
 			<td th:text="${obj.orderDescrip}"></td>
 			<td>
 			<a th:href="@{/order/delete/{id} (id=${obj.ordrId})}">Delete</a> |
-			<a th:href="@{/order/edit/{id} (id=${obj.ordrId})}">Edit</a>
+			<a th:href="@{/order/edit/{id} (id=${obj.ordrId})}">Edit</a> |
+			<a th:href="@{/order/view/{id} (id=${obj.ordrId})}">View</a>
 			</td>
 		</tr>
 	</table>
